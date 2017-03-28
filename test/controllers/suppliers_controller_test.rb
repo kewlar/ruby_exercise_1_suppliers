@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SuppliersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @supplier = suppliers(:one)
+    @supplier = suppliers(:fred_flintstone)
   end
 
   test "should get index" do
