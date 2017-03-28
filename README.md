@@ -1,24 +1,19 @@
-# README
+# Exercise application: Suppliers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a basic sample Rails application, with a goal to learn Ruby on Rails.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+The application should have the following models:
 
-* System dependencies
+* suppliers (name, address),
+* supplier's products (EAN code, description).
 
-* Configuration
+It should allow:
 
-* Database creation
+* view a list of suppliers,
+* add a new supplier,
+* view supplier's products,
+* add a product for a supplier.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There's no need for fancy design. Minimal CSS is enough.
