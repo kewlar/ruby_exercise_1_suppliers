@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+soap:
+  ean: 0011111614246
+  description: You are not special. You're not a beautiful and unique snowflake. You're the same decaying organic matter as everything else. We're all part of the same compost heap. We're all singing, all dancing crap of the world.
+  supplier: tyler_durden
+
+stone:
+  ean: 0045635919259
+  description: Rocks
+  supplier: fred_flintstone
+
+hat:
+  ean: 0721773570032
+  description: Anti Gravity Hat
+  supplier: weasleys
+
+telescope:
+  ean: 0837303482550
+  description: Boxing Telescope
+  supplier: weasleys

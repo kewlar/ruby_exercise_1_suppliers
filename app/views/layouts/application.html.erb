@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ex1Suppliers</title>
+    <title><%= ApplicationHelper::APPLICATION_TITLE %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= render 'layouts/header' %>
+      <% if notice %>
+        <div class="alert alert-info" role="alert"><%= notice %></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

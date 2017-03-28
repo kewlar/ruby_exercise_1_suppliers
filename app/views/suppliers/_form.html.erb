@@ -1,0 +1,33 @@
+<%= form_for(supplier) do |f| %>
+  <% if supplier.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      Could not save supplier. Fix <%= pluralize(supplier.errors.count, "error") %> and try again.
+    </div>
+    <% if supplier.errors[:base].any? %>
+      <ul class="text-danger">
+        <% supplier.errors.full_messages_for(:base).each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+
+  <div class="form-group <%= 'has-danger' if supplier.errors[:name].any? %>">
+    <%= f.label :name, class: 'form-control-label' %>
+    <%= f.text_field :name, class: 'form-control' %>
+    <% supplier.errors.full_messages_for(:name).each do |message| %>
+        <div class="form-control-feedback text-danger"><%= message %></div>
+    <% end %>
+    <small>Required.</small>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :address, class: 'form-control-label' %>
+    <%= f.text_field :address, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+    <%= link_to 'Cancel', (supplier.id ? supplier : suppliers_path), class: 'btn btn-link' %>
+  </div>
+<% end %>

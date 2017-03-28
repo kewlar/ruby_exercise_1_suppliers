@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+tyler_durden:
+  name: Tyler Durden
+  address: 420, Paper St. Wilmington, DE 19886
+
+fred_flintstone:
+  name: Fred Flintstone
+  address: 301 Cobblestone Way, Bedrock 70777
+
+weasleys:
+  name: Weasleys' Wizard Wheezes
+  address: 93 Diagon Alley, London, England

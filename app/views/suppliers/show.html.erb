@@ -1,0 +1,32 @@
+<h1>Supplier &quot;<%= @supplier %>&quot;</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-block">
+        <p>
+          <strong>Name:</strong>
+          <%= @supplier.name %>
+        </p>
+
+        <p>
+          <strong>Address:</strong>
+          <%= @supplier.address %>
+        </p>
+
+        <%= link_to 'Edit', edit_supplier_path(@supplier), class: 'btn btn-outline-success btn-sm' %>
+      </div>
+    </div>
+
+  </div>
+  <div class="col">
+    <p>
+      <strong>Products:</strong>
+      <%= @supplier.products.count %>
+    </p>
+
+    <%= render 'products/list', products: @supplier.products, supplier_page: true if @supplier.products.any? %>
+
+    <%= link_to 'New Product', new_product_path(supplier: @supplier.id), class: 'btn btn-outline-success' %>
+  </div>
+</div>
