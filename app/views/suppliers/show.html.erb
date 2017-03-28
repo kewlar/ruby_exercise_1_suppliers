@@ -25,7 +25,7 @@
       <%= @supplier.products.count %>
     </p>
 
-    <%= render 'products/list', products: @supplier.products, hide_supplier: true if @supplier.products.any? %>
+    <%= render 'products/list', products: @supplier.products, supplier_page: true if @supplier.products.any? %>
 
     <%= link_to 'New Product', new_product_path(supplier: @supplier.id), class: 'btn btn-outline-success' %>
   </div>

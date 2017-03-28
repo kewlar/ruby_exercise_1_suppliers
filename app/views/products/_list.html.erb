@@ -3,10 +3,12 @@
   <tr>
     <th>Ean</th>
     <th>Description</th>
-    <% if !local_assigns[:hide_supplier] %>
+    <% unless local_assigns[:supplier_page] %>
       <th>Supplier</th>
+      <th colspan="3"></th>
+    <% else %>
+      <th colspan="2"></th>
     <% end %>
-    <th colspan="3"></th>
   </tr>
   </thead>
 
@@ -15,10 +17,10 @@
       <tr>
         <td><%= product.ean %></td>
         <td><%= product.description %></td>
-        <% if !local_assigns[:hide_supplier] %>
+        <% unless local_assigns[:supplier_page] %>
           <td><%= product.supplier %></td>
+          <td><%= link_to 'Show', product %></td>
         <% end %>
-        <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %></td>
       </tr>
