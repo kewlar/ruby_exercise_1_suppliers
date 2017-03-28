@@ -1,19 +1,24 @@
 <%= form_for(product) do |f| %>
   <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="alert alert-danger" role="alert">
+      Could not save product. Fix <%= pluralize(product.errors.count, "error") %> and try again.
     </div>
+    <% if product.errors[:base].any? %>
+      <ul class="text-danger">
+        <% product.errors.full_messages_for(:base).each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group <%= 'has-danger' if product.errors[:ean].any? %>">
     <%= f.label :ean, class: 'form-control-label' %>
     <%= f.text_field :ean, class: 'form-control' %>
+    <% product.errors.full_messages_for(:ean).each do |message| %>
+        <div class="form-control-feedback text-danger"><%= message %></div>
+    <% end %>
+    <small>Required.</small>
   </div>
 
   <div class="form-group">
