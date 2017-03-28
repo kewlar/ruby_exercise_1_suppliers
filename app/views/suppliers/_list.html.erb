@@ -15,7 +15,7 @@
         <td><%= supplier.address %></td>
         <td><%= supplier.products.count %></td>
         <td><%= link_to 'Show', supplier %></td>
-        <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+        <td><%= link_to 'Edit', edit_supplier_path(supplier), class: 'text-success' %></td>
         <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %></td>
       </tr>
   <% end %>
