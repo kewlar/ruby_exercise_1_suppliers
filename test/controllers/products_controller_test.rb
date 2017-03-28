@@ -20,7 +20,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       post products_url, params: { product: { description: @product.description, ean: @product.ean, supplier_id: @product.supplier_id } }
     end
 
-    assert_redirected_to product_url(Product.last)
+    assert_redirected_to supplier_url(@product.supplier)
   end
 
   test "should show product" do
@@ -35,7 +35,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update product" do
     patch product_url(@product), params: { product: { description: @product.description, ean: @product.ean, supplier_id: @product.supplier_id } }
-    assert_redirected_to product_url(@product)
+    assert_redirected_to supplier_url(@product.supplier)
   end
 
   test "should destroy product" do
@@ -43,6 +43,6 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       delete product_url(@product)
     end
 
-    assert_redirected_to products_url
+    assert_redirected_to supplier_url(@product.supplier)
   end
 end
