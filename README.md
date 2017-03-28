@@ -17,3 +17,7 @@ It should allow:
 * add a product for a supplier.
 
 There's no need for fancy design. Minimal CSS is enough.
+
+---
+
+See it live: https://afternoon-shore-73685.herokuapp.com/
